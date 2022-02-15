@@ -8,7 +8,7 @@ for file in $(ls $dirPath)
 do
     imagePath=$dirPath/$file
     jpgPath=${imagePath%.*}.jpg
-    convert $imagePath $jpgPath rgb
+    convert $imagePath $jpgPath
 done
 
 echo "转换完成 $dirPath"

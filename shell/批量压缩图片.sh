@@ -8,15 +8,16 @@ if [ ! "$2" = "" ];then
     rate=$2
 fi
 
+compressDir=$dirPath/compress
+if [ ! -d $compressDir ];then
+    mkdir $dirPath/compress    
+fi
+
 for file in $(ls $dirPath) 
 do
-    imagePath=$dirPath/$file
-    compressDir=$dirPath/compress
-    pngPath=$compressDir/$file
-    if [ ! -d $compressDir ];then
-        mkdir $dirPath/compress    
-    fi
-    convert $imagePath -quality $rate $pngPath
+    originPath=$dirPath/$file
+    resultPath=$compressDir/$file    
+    convert $originPath -quality $rate $resultPath
 done
 
 echo "压缩完成 $dirPath/compress"

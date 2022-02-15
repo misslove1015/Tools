@@ -4,7 +4,5 @@
 
 videoPath=$1
 audioPath=${videoPath%.*}.mp3
-
 ffmpeg -i $videoPath -acodec libmp3lame -vn $audioPath
-
 echo "提取完毕: $audioPath"

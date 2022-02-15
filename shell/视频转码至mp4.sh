@@ -4,7 +4,5 @@
 
 originPath=$1
 mp4Path=${originPath%.*}.mp4
-
 ffmpeg -i $originPath -codec copy $mp4Path
-
 echo "转换完毕: $mp4Path"

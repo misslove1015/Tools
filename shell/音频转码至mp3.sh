@@ -4,7 +4,5 @@
 
 originPath=$1
 audioPath=${originPath%.*}.mp3
-
 ffmpeg -i $originPath -f mp3 -acodec libmp3lame -y $audioPath
-
 echo "转换完毕: $audioPath"

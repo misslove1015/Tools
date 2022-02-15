@@ -3,9 +3,6 @@
 # 参数为图片路径
 
 imagePath=$1
-dirPath=$(cd "$(dirname $imagePath)";pwd)
 jpgPath=${imagePath%.*}.jpg
-
 convert $imagePath $jpgPath
-
 echo "转换完成 $jpgPath"
